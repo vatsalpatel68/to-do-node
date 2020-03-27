@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>To-Do</title>
+        <link rel="stylesheet" href="../static/index.css">
+    </head>
+    <body>
+        <h1 id ="title"> To - Do<h1>
+        <form action="/add" method='post'>
+            <input type="text" name='inputtext'id='input-text' placeholder="Enter a TO-DO"/>
+            <button id ='input-button'>ADD TO-DO</button>
+        </form>
+        <ul id='content-list'> 
+            <% sentItem.forEach((instance , index) => {%>
+                    <a href='/delete/<%= instance.id %>'><li id='list-content'><%= instance.text %></li>
+                <%})%>
+        </ul>
+    </body>
+</html>
